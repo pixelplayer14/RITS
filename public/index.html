@@ -16,6 +16,17 @@
 <script src="main.js"></script>
 
 
-<a href= "https://www.strava.com/oauth/authorize?client_id=123086&response_type=code&redirect_uri=http://localhost:8080/register&approval_prompt=force&scope=read&scope=read_all&scope=activity:read_all">Add me to the map!</a><br><br>
-<a href="https://www.strava.com/oauth/authorize?client_id=123086&response_type=code&redirect_uri=http://localhost:8080/deregister&approval_prompt=force&scope=read&scope=read_all&scope=activity:read_all">Please forget I ever existed.</a>
+<a href="#" id="addLink">Add me to the map!</a><br><br>
+<a href="#" id="removeLink">Please forget I ever existed.</a>
+
+<script>
+    let addLink = document.getElementById('addLink');
+    let removeLink = document.getElementById('removeLink');
+    let host = location.host;
+    console.log(host);
+    addLink.href =  "https://www.strava.com/oauth/authorize?client_id=123086&response_type=code&redirect_uri=http://"+location.host+"/register&approval_prompt=force&scope=read&scope=read_all&scope=activity:read_all"
+
+    removeLink.href = "https://www.strava.com/oauth/authorize?client_id=123086&response_type=code&redirect_uri=http://"+location.host+"/deregister&approval_prompt=force&scope=read&scope=read_all&scope=activity:read_all"
+</script>
+
 </Body>
